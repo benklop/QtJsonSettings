@@ -64,7 +64,7 @@ namespace Json {
             }
             else
             {
-                res += str[i].toAscii();
+                res += str[i].toLatin1();
             }
         }
         return res;
@@ -138,7 +138,7 @@ namespace Json {
             if (c.unicode() > 127)
                 result = "\\u" + QByteArray::number(c.unicode(), 16).rightJustified(4, '0');
             else
-                result.append(c.toAscii());
+                result.append(c.toLatin1());
         }
         else if (variant.canConvert<qlonglong> ())
         {
@@ -264,7 +264,7 @@ namespace Json {
             if (c.unicode() > 127)
                 result = "\\u" + QByteArray::number(c.unicode(), 16).rightJustified(4, '0');
             else
-                result.append(c.toAscii());
+                result.append(c.toLatin1());
             break;
         }
         default:
